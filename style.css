@@ -1,0 +1,113 @@
+body {
+	color: #444;
+	font: normal 16px 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	background-color: #fff;
+	/* background-color: #11998e; */
+	/* background: linear-gradient(
+		to right bottom,
+		#051937,
+		#004d7a,
+		#008793,
+		#00bf72,
+		#a8eb12
+	); */
+	overflow-x: hidden;
+	line-height: 1.5;
+}
+
+.parallax {
+	/* The image used */
+	background-image: url('./Image\ 1.jpeg');
+
+	/* Full height */
+	height: 90vh;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.opaque {
+	background: -webkit-linear-gradient(to left, #38ef7d, #11998e);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #38ef7d, #11998e);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+	height: max-content;
+}
+
+.card {
+	color: #000;
+	text-align: center;
+}
+
+.card-img-top {
+	/* width: -webkit-fill-available; */
+	/* margin: 20px; */
+	/* margin-bottom: 0; */
+	/* border-radius: 0.25rem; */
+	font-size: xxx-large;
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 50px;
+}
+
+/* div.gallery {
+	margin: 10px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 270px;
+	height: max-content;
+}
+
+div.gallery:hover {
+	border: 1px solid #777;
+}
+
+div.gallery img {
+	display: block;
+	float: left;
+	width: 220px;
+	height: 200px;
+	object-fit: cover;
+	position: relative;
+
+	width: 100%;
+	height: auto;
+	padding: 15px 0;
+} */
+
+.style {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0px;
+	overflow-wrap: break-word;
+	/* background-color: transparent; */
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.25rem;
+}
+
+.style:hover {
+	border: 1px solid #fff;
+}
+
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+}
+.map-responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
