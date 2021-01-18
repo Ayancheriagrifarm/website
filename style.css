@@ -1,5 +1,5 @@
 body {
-	color: #444;
+	color: #386858;
 	font: normal 16px 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	background-color: #fff;
@@ -30,19 +30,18 @@ body {
 	background-size: cover;
 }
 
-.opaque {
-	background: -webkit-linear-gradient(to left, #38ef7d, #11998e);
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #38ef7d, #11998e);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.transparent {
+	height: inherit;
+	background: rgba(0, 0, 0, 0.6);
 }
 
-.container {
+/* .container {
 	height: max-content;
-}
+} */
 
 .card {
-	color: #000;
+	border: 1px solid #386858;
+	/* color: #000; */
 	text-align: center;
 }
 
@@ -57,38 +56,30 @@ body {
 	width: 50px;
 }
 
-/* div.gallery {
-	margin: 10px;
-	border: 1px solid #ccc;
-	float: left;
-	width: 270px;
-	height: max-content;
+.shadow {
+	box-shadow: 0 0.5rem 1rem rgba(56, 104, 88, 0.15) !important;
 }
 
-div.gallery:hover {
-	border: 1px solid #777;
+@media only screen and (min-width: 768px) {
+	.carousel-inner .carousel-item {
+		height: 80vh;
+	}
+
+	.carousel-item img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-height: 80vh;
+	}
 }
 
-div.gallery img {
-	display: block;
-	float: left;
-	width: 220px;
-	height: 200px;
-	object-fit: cover;
-	position: relative;
-
-	width: 100%;
-	height: auto;
-	padding: 15px 0;
-} */
-
-.style {
+/* .style {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-width: 0px;
 	overflow-wrap: break-word;
-	/* background-color: transparent; */
+	background-color: transparent;
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 	border-radius: 0.25rem;
@@ -96,7 +87,7 @@ div.gallery img {
 
 .style:hover {
 	border: 1px solid #fff;
-}
+} */
 
 .map-responsive {
 	overflow: hidden;
