@@ -65,6 +65,17 @@ body {
 	box-shadow: 0 0.5rem 1rem rgba(56, 104, 88, 0.15) !important;
 }
 
+.carousel-inner .carousel-item {
+	height: 33vh;
+}
+
+.carousel-item img {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	min-height: 33vh;
+}
+
 @media only screen and (min-width: 768px) {
 	.carousel-inner .carousel-item {
 		height: 80vh;
