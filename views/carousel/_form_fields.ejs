@@ -1,0 +1,23 @@
+<div class="form-group mb-3">
+	<div class="input-group" id="border">
+		<div class="input-group-prepend">
+			<span class="input-group-text">Photo</span>
+		</div>
+		<div class="custom-file">
+			<input type="file" class="custom-file-input" id="image" />
+			<label class="custom-file-label text-left" for="image"
+				><span id="img-name"
+					><%= image.image ? image.title || 'Image preview' : 'Choose file' %></span
+				></label
+			>
+		</div>
+	</div>
+	<img
+		id="img-preview"
+		class="<%= image.image ? 'img-preview' : '' %>"
+		style="width: 100%; <%= image.image ? 'display: block' : 'display: none' %>"
+		src="<%= image.image %>"
+	/>
+</div>
+
+<input type="hidden" name="image" value="<%= image.image %>" />

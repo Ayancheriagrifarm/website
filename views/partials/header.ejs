@@ -1,0 +1,74 @@
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="https://www.ayancheriagrifarm.com/">
+				Ayancheri Agri Farm & Agri Supermarket
+			</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<!--justify-content-end-->
+				<!-- <ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a href="#" class="nav-link text-center"> Home</a>
+					</li>
+				</ul> -->
+				<ul class="navbar-nav ml-auto">
+					<!--ml-auto-->
+					<% if (typeof name !== 'undefined') { %>
+					<li class="nav-item mt-1 px-2">
+						<form action="/<%= name %>" method="get">
+							<div class="row">
+								<div class="input-group col justify-content-center">
+									<input
+										class="form-control-sm"
+										type="search"
+										name="search"
+										placeholder="Search"
+									/>
+									<span class="input-group-append">
+										<button class="btn btn-sm btn-outline-secondary">
+											<i class="fa fa-search"></i>
+										</button>
+									</span>
+								</div>
+							</div>
+						</form>
+					</li>
+					<% } %>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/seedlings"> Seedlings</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/fertilizers"> Fertilizers</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/tools"> Tools</a>
+					</li>
+					<% if (!currentUser){ %>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/login"> Login</a>
+					</li>
+					<% } %> <% if (currentUser){ %>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/carousel"> Images</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-center" href="/logout"> Logout</a>
+					</li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+<%- include("./message") %>

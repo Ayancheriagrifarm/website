@@ -1,0 +1,33 @@
+<div class="text-center container">
+	<h1 class="mt-4 mb-3 pb-2" style="border-bottom: 2px solid #386858">Images</h1>
+	<% if (currentUser) { %>
+	<div class="row justify-content-center justify-content-md-end">
+		<div class="col-6 col-md-3 col-lg-2 mb-4">
+			<a class="btn btn-md btn-success btn-round px-5" href="/carousel/add">Add</a>
+		</div>
+	</div>
+	<% } %>
+	<div class="row">
+		<% images.forEach(image => { %>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-1">
+			<div style="height: 12vh">
+				<img
+					class="rounded shadow d-block w-100"
+					style="object-fit: cover; max-height: 100%"
+					src="<%= image.image %> "
+					alt="slide"
+				/>
+			</div>
+			<div class="row justify-content-end px-3">
+				<a class="p-1 edit" href="/carousel/<%= image._id %>/edit">
+					<i class="fas fa-pencil"></i
+				></a>
+				<div class="p-1">
+					<%- include('../partials/delete', {url:`/carousel/${image._id}`}) %>
+				</div>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+</div>
+<div class="py-3"></div>

@@ -1,0 +1,194 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	color: #386858;
+	font: normal 16px 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	background-color: #fff;
+	overflow-x: hidden;
+	line-height: 1.5;
+	margin-bottom: 76px;
+}
+
+.alert {
+	margin-top: 16px;
+	margin-bottom: 0px;
+}
+
+.parallax {
+	/* The image used */
+	background-image: none;
+
+	/* Full height */
+	height: calc(100vh - 56px);
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.transparency {
+	height: inherit;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+hr {
+	background-color: #fff;
+	width: 55vw;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.card {
+	/* border: 1px solid #386858; */
+	text-align: center;
+	/* color: #000; */
+}
+
+.card-icon {
+	font-size: xxx-large;
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 50px;
+}
+
+.card-img-cover {
+	height: 15vh;
+	object-fit: cover;
+}
+
+.desc {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.res-sm-height img {
+	max-height: 300px; /* Set fixed height on large screen */
+	max-width: 100%; /* Set full width on small screen */
+}
+
+.shadow {
+	box-shadow: 0 0.5rem 1rem rgba(56, 104, 88, 0.15) !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* Image Carousel  */
+/* ------------------------------------------------------------------- */
+
+.carousel-inner .carousel-item {
+	height: 33vh;
+}
+
+.carousel-item img {
+	height: 33vh;
+	object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+	.carousel-inner .carousel-item {
+		height: 80vh;
+	}
+
+	.carousel-item img {
+		height: 80vh;
+		object-fit: cover;
+	}
+}
+
+/* ------------------------------------------------------------------- */
+
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+}
+
+.map-responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.form-model {
+	width: 100%;
+	max-width: 457px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-model .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+}
+
+.form-control-sm {
+	border: 1px solid gray;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-control:focus,
+.form-control-sm:focus {
+	border-color: #386858;
+	outline-color: #386858;
+	outline-offset: 0;
+	box-shadow: 0 0 0 0.2rem rgb(56 104 88 / 25%);
+}
+
+.edit {
+	color: grey;
+}
+
+.edit:hover {
+	color: #386858;
+}
+
+.btn-outline-secondary {
+	color: #386858;
+}
+
+.btn-outline-secondary:hover {
+	background-color: #386858;
+	border-color: #386858;
+}
+
+.btn-outline-secondary:focus {
+	box-shadow: 0 0 0 0.2rem rgb(56 104 88 / 25%);
+}
+
+.btn-round {
+	border-radius: 2rem;
+}
+
+.input-group-text {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.img-preview {
+	border: 1px solid #386858;
+	border-top: 0;
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	min-height: 60px; /* Set the fixed height of the footer here */
+	background-color: #386858;
+	color: #fff;
+}
