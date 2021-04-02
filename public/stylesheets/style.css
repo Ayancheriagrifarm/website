@@ -10,7 +10,7 @@ body {
 	background-color: #fff;
 	overflow-x: hidden;
 	line-height: 1.5;
-	margin-bottom: 76px;
+	margin-bottom: 60px; /*Chage Accordingly*/
 }
 
 .alert {

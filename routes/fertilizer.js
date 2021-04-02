@@ -96,6 +96,19 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
+// Toggle Instock
+
+router.post('/:id/instock', isLoggedIn, async (req, res) => {
+	try {
+		const fertilizer = await Fertilizer.findById(req.params.id);
+		await fertilizer.toggleInStock();
+		res.redirect('back');
+	} catch (err) {
+		req.flash('error', err.message);
+		res.redirect('back');
+	}
+});
+
 // Edit One Fertilizer
 
 router.get('/:id/edit', isLoggedIn, async (req, res) => {
@@ -116,6 +129,7 @@ router.put('/:id', isLoggedIn, async (req, res) => {
 		fertilizer.title = req.body.title;
 		fertilizer.description = req.body.description;
 		fertilizer.price = req.body.price;
+		fertilizer.inStock = req.body.inStock === '1' ? true : false;
 		fertilizer.info = req.body.info;
 		await fertilizer.save();
 		req.flash('success', 'Update successful');

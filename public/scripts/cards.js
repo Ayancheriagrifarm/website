@@ -28,10 +28,7 @@ if (isMobile) {
 const loadMore = () => {
 	if (onProgress) return;
 	skip += limit;
-	if (!isMobile && first === 1) {
-		limit = 12;
-		first = 0;
-	}
+	if (!isMobile && first === 1) limit = 12;
 	// 	listAllCards(false);
 	// };
 
@@ -61,10 +58,23 @@ const loadMore = () => {
 							<div class="card-card">
 								<h5 class="card-title my-1">${card.title}</h5>
 								<p class="card-text mb-1 px-3 desc">${card.description || '...'}</p>
-								<h6 class="card-text mb-0"> ₹${card.price || 0}</h6>
+								<h6 class="card-text mb-1"> ₹${card.price || 0}</h6>
+								<h6 class="mb-0 ${card.inStock ? 'text-success' : 'text-danger'}">
+									${card.inStock ? 'Available' : 'Sold Out'}
+								</h6>
 								${
 									result.isLoggedIn
 										? `<div style="display: flex; justify-content: flex-end">
+										<form action="${window.location.href}/${card._id}/instock" method="post">
+											<button
+												class="p-0 mr-2 edit"
+												style="border: none; background-color: transparent"
+											>
+											<i
+											class="fas ${card.inStock ? 'fa-eye-slash fa-flip-horizontal' : 'fa-eye'}"
+										></i>
+											</button>
+										</form>
 										<a class="mr-1 edit" href="${window.location.href}/${card._id}/edit">
 											<i class="fas fa-pencil"></i
 										></a></div>`
@@ -75,7 +85,11 @@ const loadMore = () => {
 					)
 				);
 			});
-			limit = 6;
+			if (!isMobile && first === 1) {
+				skip += 6;
+				limit = 6;
+				first = 0;
+			}
 			if (!result.meta.has_more) {
 				finished = true;
 				// loadMoreElement.style.visibility = 'hidden';

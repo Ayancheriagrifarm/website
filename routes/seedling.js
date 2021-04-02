@@ -94,6 +94,19 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
+// Toggle Instock
+
+router.post('/:id/instock', isLoggedIn, async (req, res) => {
+	try {
+		const seedling = await Seedling.findById(req.params.id);
+		await seedling.toggleInStock();
+		res.redirect('back');
+	} catch (err) {
+		req.flash('error', err.message);
+		res.redirect('back');
+	}
+});
+
 // Edit One Seedling
 
 router.get('/:id/edit', isLoggedIn, async (req, res) => {
@@ -115,6 +128,7 @@ router.put('/:id', isLoggedIn, async (req, res) => {
 		seedling.image = req.body.image;
 		seedling.description = req.body.description;
 		seedling.price = req.body.price;
+		seedling.inStock = req.body.inStock === '1' ? true : false;
 		seedling.info = req.body.info;
 		await seedling.save();
 		req.flash('success', 'Update successful');

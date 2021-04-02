@@ -92,6 +92,19 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
+// Toggle Instock
+
+router.post('/:id/instock', isLoggedIn, async (req, res) => {
+	try {
+		const tool = await Tool.findById(req.params.id);
+		await tool.toggleInStock();
+		res.redirect('back');
+	} catch (err) {
+		req.flash('error', err.message);
+		res.redirect('back');
+	}
+});
+
 // Edit One Tool
 
 router.get('/:id/edit', isLoggedIn, async (req, res) => {
@@ -112,6 +125,7 @@ router.put('/:id', isLoggedIn, async (req, res) => {
 		tool.title = req.body.title;
 		tool.description = req.body.description;
 		tool.price = req.body.price;
+		tool.inStock = req.body.inStock === '1' ? true : false;
 		tool.info = req.body.info;
 		await tool.save();
 		req.flash('success', 'Update successful');
