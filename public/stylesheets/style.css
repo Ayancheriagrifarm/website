@@ -147,6 +147,24 @@ hr {
 	box-shadow: 0 0 0 0.2rem rgb(56 104 88 / 25%);
 }
 
+/* ------------------------------------------------------------------- */
+/* Form input type Number without arrows */
+/* ------------------------------------------------------------------- */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+/* ------------------------------------------------------------------- */
+
 .edit {
 	color: grey;
 }
